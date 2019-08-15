@@ -21,20 +21,22 @@ function App() {
     setPalpite(150);
   };
 
-  const elementoInit = (
-    <div className="align-items-center bg-white d-flex jumbotron justify-content-center">
-      <div className="card">
-        <div className="m-3 card-body">
-          <h1 className="font-weight-bold">ACERTAR NÚMERO</h1>
-          <button className="btn btn-primary" onClick={iniciarJogo}>
-            Começar a jogar!
-          </button>
+  const Init = () => {
+    return (
+      <div className="align-items-center bg-white d-flex jumbotron justify-content-center">
+        <div className="card">
+          <div className="m-3 card-body">
+            <h1 className="font-weight-bold">ACERTAR NÚMERO</h1>
+            <button className="btn btn-primary" onClick={iniciarJogo}>
+              Começar a jogar!
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
-  if (estado === "ENTRADA") return elementoInit;
+  if (estado === "ENTRADA") return <Init />;
 
   const menor = () => {
     setNumPalpites(numPalpites + 1);
